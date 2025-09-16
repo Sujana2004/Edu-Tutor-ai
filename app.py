@@ -37,7 +37,7 @@ def get_reply(prompt, context=""):
     return parse_text(call_hf(model_id, payload))
 
 def sentiment(text):
-    model_id = "distilbert-base-uncased-finetuned-sst-2-english"
+    model_id = "Sujana85/distilbert-base-uncased-finetuned-sst-2-english"
     resp = call_hf(model_id, text)
     if isinstance(resp, list) and len(resp) > 0:
         return resp[0]["label"], resp[0]["score"]
