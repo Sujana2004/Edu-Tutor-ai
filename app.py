@@ -76,14 +76,14 @@ with st.sidebar:
                 u = login(email, pwd)
                 if u:
                     st.session_state.user = u
-                    st.experimental_rerun()
+                    st.rerun()
                 else:
                     st.error("Wrong login")
     else:
         st.success(f"Logged in as {st.session_state.user['email']}")
         if st.button("Logout"):
             st.session_state.user = None
-            st.experimental_rerun()
+            st.rerun()
 
 if st.session_state.user:
     email = st.session_state.user["email"]
@@ -97,7 +97,7 @@ if st.session_state.user:
         reply = get_reply(msg)
         r_label, r_score = sentiment(reply)
         save_msg(email, "assistant", reply, (r_label, r_score))
-        st.experimental_rerun()
+        st.rerun()
 
     st.subheader("Dashboard")
     total_users = users_col.count_documents({})
