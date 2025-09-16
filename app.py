@@ -41,7 +41,7 @@ def parse_text(resp):
     return str(resp)
 
 def get_reply(prompt, context=""):
-    model_id = "Sujana85/granite-3.3-2b-instruct"
+    model_id = "granite-3.3-2b-instruct"
     payload = f"Context: {context}\nStudent: {prompt}"
     return parse_text(call_hf(model_id, payload))
 
