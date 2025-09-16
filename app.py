@@ -19,7 +19,7 @@ db = client.get_database("edu_tutor_ai")
 users_col = db.get_collection("users")
 chats_col = db.get_collection("chats")
 
-HF_BASE = "https://api-inference.huggingface.co/models"
+HF_BASE = "https://huggingface.co/Sujana85/models"
 
 def call_hf(model_id, inputs):
     headers = {"Authorization": f"Bearer {HF_TOKEN}"}
