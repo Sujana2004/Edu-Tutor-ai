@@ -3,3 +3,4 @@ streamlit
 pymongo
 requests
 pandas
+passlib[bcrypt]
