@@ -119,7 +119,7 @@ def init_ai_models():
         if Config.HF_TOKEN and Config.HF_TOKEN != "your-huggingface-token":
             try:
                 hf_client = InferenceClient(
-                    model="HuggingFaceH4/zephyr-7b-beta",
+                    model="ibm-granite/granite-3.3-2b-instruct",
                     token=Config.HF_TOKEN
                 )
             except:
