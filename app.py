@@ -180,7 +180,7 @@ def authenticate_user(db, username, password):
 def generate_ai_response(hf_client, user_input, context=""):
     try:
         if not hf_client:
-            return "I'm currently having trouble connecting to the AI model. Please check your Hugging Face token configuration."
+            return "❌ AI model not initialized. Please check your Hugging Face token in Streamlit secrets."
         
         prompt = f"""You are an intelligent educational tutor AI assistant. Your role is to help students learn effectively by providing clear, engaging, and personalized responses.
 
@@ -204,15 +204,13 @@ Response:"""
             return_full_text=False
         )
         return response
+
     except Exception as e:
-        # Fallback response
-        fallback_responses = [
-            "That's a great question! While I'm having some technical difficulties right now, I encourage you to break down your question into smaller parts and think about what you already know about this topic.",
-            "I appreciate you asking! Even though I'm experiencing some connectivity issues, remember that learning is a process. Try researching this topic from multiple sources and don't hesitate to ask again later.",
-            "Thank you for your patience! While my AI systems are being updated, I suggest you explore this topic by connecting it to concepts you already understand well."
-        ]
-        import random
-        return random.choice(fallback_responses)
+        return f"❌ AI model error: {str(e)}. Please verify your Hugging Face token and model settings."
+
+#         import random
+#         return random.choice(fallback_responses)
+
 
 # Sentiment Analysis
 def analyze_sentiment(sentiment_analyzer, text):
