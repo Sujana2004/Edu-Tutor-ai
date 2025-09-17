@@ -80,7 +80,7 @@ if 'user_analytics' not in st.session_state:
 # Configuration
 class Config:
     MONGODB_URI = st.secrets.get("MONGODB_URI", "")  #mongodb+srv://your-connection-string in secrets you will give
-    HF_TOKEN = st.secrets.get("HF_TOKEN", "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")  #your-huggingface-token in secrets
+    HF_TOKEN = st.secrets.get("HF_TOKEN", "")  #your-huggingface-token in secrets
     # IBM_API_KEY = st.secrets.get("IBM_API_KEY", "your-ibm-api-key")
     # IBM_PROJECT_ID = st.secrets.get("IBM_PROJECT_ID", "your-project-id")
 
