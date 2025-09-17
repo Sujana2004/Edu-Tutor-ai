@@ -399,7 +399,7 @@ def show_main_app():
         send_button = st.button("Send", type="primary")
     
     # Process user input
-    if (send_button or user_input) and user_input:
+    if send_button and user_input:
         if hf_client and sentiment_analyzer:
             # Analyze sentiment
             sentiment_score, sentiment_label = analyze_sentiment(sentiment_analyzer, user_input)
