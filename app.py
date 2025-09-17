@@ -128,6 +128,8 @@ def init_ai_models():
                     model="microsoft/DialoGPT-medium",
                     token=Config.HF_TOKEN
                 )
+                st.write("HF Token loaded:", bool(Config.HF_TOKEN and Config.HF_TOKEN.strip()))
+
         
         return sentiment_analyzer, hf_client
     except Exception as e:
