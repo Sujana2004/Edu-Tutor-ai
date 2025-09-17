@@ -50,12 +50,12 @@ st.markdown("""
     }
     
     .user-message {
-        background-color: #e3f2fd;
+        background-color: black;
         margin-left: 2rem;
     }
     
     .ai-message {
-        background-color: #f3e5f5;
+        background-color: black;
         margin-right: 2rem;
     }
 </style>
