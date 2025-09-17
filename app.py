@@ -423,7 +423,7 @@ def show_main_app():
             st.session_state.user_analytics['avg_sentiment'] = new_avg
             
             # Save to database
-            if db:
+            if db is Not None:
                 save_interaction(db, st.session_state.username, user_input, ai_response, sentiment_score)
             
             # Clear input and refresh
