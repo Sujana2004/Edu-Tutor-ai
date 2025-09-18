@@ -1,13 +1,7 @@
-
-# Lightweight requirements for Streamlit Cloud
 streamlit
-pandas
-plotly
-pymongo[srv]
+pymongo
 bcrypt
+plotly
+pandas
+huggingface_hub
 requests
-transformers[torch]
-huggingface-hub
-scikit-learn
-python-dateutil
-dnspython
