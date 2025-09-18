@@ -100,13 +100,13 @@ import streamlit as st
 
 def verify_hf_token(token):
     try:
-        client = InferenceClient(model="gpt2", token=token)
+        client = InferenceClient(model="google/vaultgemma-1b", token=token)
         # Make a simple request to check if the token works
         response = client.text_generation("This is a test.")
-        st.success("Hugging Face token is valid and has access to gpt2.")
+        st.success("Hugging Face token is valid and has access to model.")
         return True
     except Exception as e:
-        st.error(f"Hugging Face token is invalid or does not have access to gpt2: {e}")
+        st.error(f"Hugging Face token is invalid or does not have access to model: {e}")
         return False
 
 # Example usage (you can add this to your main app logic)
