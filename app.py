@@ -9,7 +9,6 @@ from pymongo import MongoClient
 import bcrypt
 import requests
 import json
-from transformers import pipeline
 import os
 from huggingface_hub import InferenceClient
 import time
