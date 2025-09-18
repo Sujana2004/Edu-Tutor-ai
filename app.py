@@ -14,6 +14,17 @@ import os
 from huggingface_hub import InferenceClient
 import time
 
+
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+# Download VADER lexicon (only needs to be done once)
+try:
+    analyzer = SentimentIntensityAnalyzer()
+except LookupError:
+    nltk.download('vader_lexicon')
+    analyzer = SentimentIntensityAnalyzer()
+
 # Page configuration
 st.set_page_config(
     page_title="Edu Tutor AI - Intelligent Student Engagement Platform",
