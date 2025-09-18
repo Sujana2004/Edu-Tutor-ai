@@ -95,6 +95,28 @@ class Config:
     # IBM_API_KEY = st.secrets.get("IBM_API_KEY", "your-ibm-api-key")
     # IBM_PROJECT_ID = st.secrets.get("IBM_PROJECT_ID", "your-project-id")
 
+# filepath: c:\Users\korup\OneDrive\Desktop\Myapp.py
+from huggingface_hub import InferenceClient
+import streamlit as st
+
+def verify_hf_token(token):
+    try:
+        client = InferenceClient(model="gpt2", token=token)
+        # Make a simple request to check if the token works
+        response = client.text_generation("This is a test.")
+        st.success("Hugging Face token is valid and has access to gpt2.")
+        return True
+    except Exception as e:
+        st.error(f"Hugging Face token is invalid or does not have access to gpt2: {e}")
+        return False
+
+# Example usage (you can add this to your main app logic)
+HF_TOKEN = st.secrets.get("HF_TOKEN", "")
+if HF_TOKEN:
+    is_valid = verify_hf_token(HF_TOKEN)
+else:
+    st.warning("Please provide a Hugging Face token in Streamlit secrets.")
+
 # MongoDB connection
 @st.cache_resource
 def init_mongodb():
